@@ -1,0 +1,322 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+:root {
+  --bg-body: #F8F9FA;
+  --bg-main: #2ECA7F;
+  --c-white: #fff;
+  --c-black: #343A40;
+}
+
+/* ========================= */
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  background-color: var(--bg-body);
+}
+
+.container {
+  background-color: var(--c-white);
+  margin: 2.5rem 1.875rem 1.875rem;
+  border-radius: .625rem;
+  -webkit-border-radius: .625rem;
+  -moz-border-radius: .625rem;
+  -ms-border-radius: .625rem;
+  -o-border-radius: .625rem;
+  overflow: hidden;
+}
+
+/* small */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* =====header====== */
+header {
+  background-color: var(--bg-main);
+  padding: .9375rem 1.875rem;
+  width: 100;
+  height: auto;
+  color: var(--c-white);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: flex;
+  flex-flow: wrap row;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: .9375rem;
+}
+
+header .profile {
+  display: flex;
+  flex-wrap: wrap row;
+  gap: .9375rem
+}
+
+header .profile img {
+  width: 5rem;
+  height: 5rem;
+}
+
+header .profile .name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+}
+
+header .profile .name h2 {
+  font-size: 1.875rem;
+  letter-spacing: .0625rem;
+  font-weight: 700;
+}
+
+header .profile .name p,
+header nav p {
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ----------- */
+header nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .625rem;
+}
+
+header nav p {
+  font-weight: 700;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+}
+
+header nav ul li a {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.125rem;
+  color: var(--bg-main);
+  background-color: var(--c-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+/* ===== main ==== */
+main {
+  position: relative;
+  height: 100%;
+}
+
+/* ======aside===== */
+aside {
+  height: 100%;
+  width: 12%;
+  background-color: var(--c-white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: .125rem solid #eee;
+}
+
+aside ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+aside ul a {
+  color: var(--c-black);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-left: 20%;
+  padding-right: .625rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+aside ul a.active {
+  color: var(--bg-main);
+  position: relative;
+}
+
+aside ul a.active::before {
+  content: '';
+  background-color: var(--bg-main);
+  width: 15%;
+  height: .14rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+
+@media (max-width: 1000px) {
+  aside ul a {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  aside ul {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  aside ul a span {
+    display: none;
+  }
+}
+
+/* ===== parent ===== */
+main .parent {
+  width: 88%;
+  margin-left: 12%;
+  padding: 4.8rem 2.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  main .parent {
+    flex-direction: column;
+  }
+}
+
+
+main .parent section.box-img {
+  text-align: center;
+  min-width: 300px;
+  margin-bottom: 2rem;
+}
+
+main .parent section.box-img img {
+  width: 80%;
+}
+
+main .parent section.info {
+  padding-inline: 2.5rem;
+}
+
+main .parent section.info h3 {
+  width: fit-content;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: var(--c-black);
+  padding-bottom: .625rem;
+  border-bottom: .125rem solid var(--bg-main);
+  position: relative;
+}
+
+main .parent section.info h3 span {
+  background-color: var(--bg-main);
+  position: absolute;
+  width: 40%;
+  height: .5rem;
+  bottom: -0.25rem;
+  left: 0;
+  border-radius: 1.25rem;
+  -webkit-border-radius: 1.25rem;
+  -moz-border-radius: 1.25rem;
+  -ms-border-radius: 1.25rem;
+  -o-border-radius: 1.25rem;
+}
+
+main .parent section.info>p,
+main .parent section.info strong {
+  color: var(--c-black);
+  font-size: 1rem;
+  text-transform: capitalize;
+  line-height: 1.6;
+  margin-block: 1.25rem;
+}
+
+main .parent section.info>p {
+  font-weight: 500;
+
+}
+
+main .parent section.info li {
+  margin-bottom: .3125rem;
+}
+
+main .parent section.info strong {
+  margin-right: .3125rem;
+}
+
+main .parent section.info>a {
+  display: inline-block;
+  background-color: var(--bg-main);
+  color: var(--c-white);
+  padding: .625rem 1.25rem;
+  margin-top: 1.25rem;
+  text-transform: capitalize;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: .0625rem;
+  border-radius: .4rem;
+  -webkit-border-radius: .4rem;
+  -moz-border-radius: .4rem;
+  -ms-border-radius: .4rem;
+  -o-border-radius: .4rem;
+}
+
+main .parent section.info>a i {
+  color: var(--bg-main);
+  background-color: var(--c-white);
+  margin-right: .5rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
